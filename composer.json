@@ -1,0 +1,41 @@
+{
+    "name": "gemy/chat-gpt-trans",
+    "description": "using for chat-gpt translation",
+    "type": "library",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=7.0",
+        "laravel/framework": ">=7.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/app/",
+            "Gemy\\ChatGptTrans\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\": "app/",
+            "Gemy\\ChatGptTrans\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mohamed gamal",
+            "email": "mohamedgammal55@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gemy\\ChatGptTrans\\ChatGptTransRouteServiceProvider"
+            ],
+            "aliases": {
+                "MyGiftApi": "Gemy\\ChatGptTrans\\ChatGptTrans"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

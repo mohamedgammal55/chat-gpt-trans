@@ -1,6 +1,6 @@
 <?php
 
-namespace Gemy\MygiftApi;
+namespace Gemy\ChatGptTrans;
 
 use Illuminate\Support\Facades\Facade;
 

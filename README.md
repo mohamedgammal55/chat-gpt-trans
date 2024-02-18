@@ -1,118 +1,40 @@
-<p align="center"><img src="logo.svg" alt="My gift logo"></p>
+<p align="center"><img src="logo.svg" alt="Chat GPT Translation" style="width: 50%"></p>
 
 <p align="center">
-<a href="https://github.com/mohamedgammal55/mygift-api/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/gemy/mygift-api"><img src="https://img.shields.io/packagist/dt/gemy/mygift-api" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/gemy/mygift-api"><img src="https://img.shields.io/packagist/v/gemy/mygift-api" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/gemy/mygift-api"><img src="https://img.shields.io/packagist/l/gemy/mygift-api" alt="License"></a>
+<a href="https://github.com/mohamedgammal55/chat-gpt-trans/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/gemy/chat-gpt-trans"><img src="https://img.shields.io/packagist/dt/gemy/chat-gpt-trans" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/gemy/chat-gpt-trans"><img src="https://img.shields.io/packagist/v/gemy/chat-gpt-trans" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/gemy/chat-gpt-trans"><img src="https://img.shields.io/packagist/l/gemy/chat-gpt-trans" alt="License"></a>
 </p>
 
-<p align="center">
-<a href="#!" target="_blank"><img src="googleplay.svg"  alt="app link on google play"></a>
-<a href="#!" target="_blank"><img src="applestore.svg"  alt="app link on apple store"></a>
-</p>
+## Chat GPT Translation
 
-## My Gift
-
-My Gift is an application to buy discount coupons
+Translation library using Chat-gpt
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require gemy/mygift-api
+composer require gemy/chat-gpt-trans
 ```
-
-## setup Database
-
-to setup my gift setting:
-
-```bash
-php artisan my-gift:setup
-```
-
-
-## setup Slug
-
-to save your slug on my gift:
-
-```bash
-php artisan my-gift:slug
-```
-
-
-
-### The status codes
-
-These are the codes that will be returned to you in the event of success or failure:
-
-<table style="width:100%">
-<thead>
-  <tr>
-    <th>        status             </th>
-    <th>        the meaning             </th>
-  </tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>This code exists, use the data in “data”</td>
-</tr>
-<tr>
-<td>404</td>
-<td>This code is invalid</td>
-</tr>
-<tr>
-<td>406</td>
-<td>you must send the code</td>
-</tr>
-<tr>
-<td>407</td>
-<td>you must send the slug</td>
-</tr>
-<tr>
-<td>408</td>
-<td>This code has already been used</td>
-</tr>
-<tr>
-<td>409</td>
-<td>This code has expired</td>
-</tr>
-</tbody>
-</table>
-
-
-#### This is the code when the status is 200
-
-if "type" = "per" It means that it is a percentage, and when it is with "value" it means that it is just a value
-
-<img src="response.png" alt="my gift response">
-
 
 ## The code
 
-use it as a trait
-
 ```bash
-use Gemy\MygiftApi\App\MyGiftApi;
+use Gemy\ChatGptTrans\App\ChatGptTrans;
 
 class HomeController extends Controller
 {
-    use MyGiftApi;
-
-    public function checkIfCodeExists()
+    public function transText()
     {
-        $response = $this->checkIfCodeExists('code', 'slug');
-        
-        //put your code here
-    }
-    
-    public function useCoupon()
-    {
-        $response = $this->useCoupon('code', 'slug','your order id','The discount value after the calculation');
-        
-        //put your code here
+         $string = "مساج الحجارة الساخنة والأعشاب";
+         /// If you don`t need to save it in a file, write it like this
+         $text = new ChatGptTrans('en',false);
+         ////
+          $text = new ChatGptTrans('en',true);
     }
 }
 ```
+
+#### If the response is null then there is an error

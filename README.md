@@ -19,9 +19,14 @@ You can install the package via composer:
 composer require gemy/chat-gpt-trans
 ```
 
+## Edit in env file
+```
+TRANS_KEY=your_chat_gpt_token
+```
+
 ## The code
 
-```bash
+```
 use Gemy\ChatGptTrans\App\ChatGptTrans;
 
 class HomeController extends Controller
